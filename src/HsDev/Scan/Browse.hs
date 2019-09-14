@@ -213,6 +213,7 @@ lookupModule_ d mn = case GHC.lookupModuleWithSuggestions d mn Nothing of
 	GHC.LookupMultiple ms -> map fst ms
 	GHC.LookupHidden ls rs -> map fst $ ls ++ rs
 	GHC.LookupNotFound _ -> []
+	GHC.LookupUnusable _ -> []
 
 -- | Get modules packages
 modulesPackages :: [ModuleLocation] -> [ModulePackage]
